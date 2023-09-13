@@ -8,6 +8,7 @@
         "inlineSources": false,
         "isolatedModules": true,
         "moduleResolution": "NodeNext",
+        "module": "NodeNext",
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "preserveWatchOutput": true,

@@ -3,9 +3,7 @@
     "compilerOptions": {
         "jsx": "react-jsx",
         "lib": ["dom", "ES2015"],
-        "module": "nodenext",
-        "target": "es6",
-        "allowImportingTsExtensions": true,
-        "moduleResolution": "nodenext"
+        "target": "esnext",
+        "allowImportingTsExtensions": true
     }
 }

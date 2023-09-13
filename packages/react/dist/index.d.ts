@@ -1,5 +1,8 @@
-import * as react_jsx_runtime from 'react/jsx-runtime';
+import { VariantProps } from '@stitches/react';
 
-declare function App(): react_jsx_runtime.JSX.Element;
+declare const styled: any;
 
-export { App };
+declare const Button: any;
+type ButtonProps = VariantProps<typeof styled.Button>;
+
+export { Button, ButtonProps };
