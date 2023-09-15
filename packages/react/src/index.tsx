@@ -1,9 +1,6 @@
-import { styled } from "./styles/index.ts"
+import { styled } from "./styles/index"
 import { VariantProps } from '@stitches/react'
 
-// export type ButtonProps = {
-//   size: 'small' | 'big'
-// }
 
 export const Button = styled('button', {
   fontFamily: '$default',
@@ -35,4 +32,4 @@ export const Button = styled('button', {
   },
 })
 
-export type ButtonProps = VariantProps<typeof styled.Button>
+export type ButtonProps = VariantProps<typeof Button>

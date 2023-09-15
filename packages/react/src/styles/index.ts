@@ -7,10 +7,9 @@ import {
     radii,
     space,
 } from '@ignite-ui/tokens'
-import { createStitches, defaultThemeMap, VariantProps } from '@stitches/react'
+import { createStitches, defaultThemeMap } from '@stitches/react'
 
 
-export type VariantProps2  = VariantProps
 export const {
     styled,
     css,
