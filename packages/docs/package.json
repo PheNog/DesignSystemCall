@@ -1,5 +1,5 @@
 {
-  "name": "@ignite-ui/docs",
+  "name": "@call-nog-ui/docs",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -12,9 +12,9 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "@ignite-ui/eslint-config": "*",
-    "@ignite-ui/react": "*",
-    "@ignite-ui/tokens": "*",
+    "@call-nog-ui/eslint-config": "*",
+    "@call-nog-ui/react": "*",
+    "@call-nog-ui/tokens": "*",
     "@storybook/addon-a11y": "^7.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

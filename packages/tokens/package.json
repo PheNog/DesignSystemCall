@@ -1,5 +1,5 @@
 {
-  "name": "@ignite-ui/tokens",
+  "name": "@call-nog-ui/tokens",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@ignite-ui/eslint-config": "*",
-    "@ignite-ui/ts-config": "*",
+    "@call-nog-ui/eslint-config": "*",
+    "@call-nog-ui/ts-config": "*",
     "tsup": "^6.7.0",
     "typescript": "^5.1.3"
   }
