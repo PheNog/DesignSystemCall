@@ -1,5 +1,11 @@
 # @call-nog-ui/react
 
+## 2.0.2
+
+### Patch Changes
+
+- fix textInput props
+
 ## 2.0.1
 
 ### Patch Changes
