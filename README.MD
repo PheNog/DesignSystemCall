@@ -141,7 +141,9 @@ Após isso você deve confirmar suas alterações, e o primeiro passo foi comple
 npm run version-packages
 ```
 esse comando ira alterar as versões do pacote automaticamente conforme nossa configuração anterior, alem de automaticamente atualizar o changelog do pacote referido com as alterações.
+
 ![Alt text](image-4.png)
+
 Changelog:
 
 ![Alt text](image-5.png)
