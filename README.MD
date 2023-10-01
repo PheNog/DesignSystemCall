@@ -1,7 +1,5 @@
 <h1 align="center">Call-Nog UI</h1>
 
-![Cover (1)](https://github.com/PheNog/ignite-shop/assets/104810112/6ad0986e-2da1-4526-b32f-65b236982857)
-
 ---
 
 <p align="center">
@@ -52,7 +50,6 @@ Design System com padrões de projeto, components e suas respectivas documentaç
 - [X] Criação do changelog automatica via CLI.
 
 - [X] Deploy automatizado com storybook/deployer aliado as github actions
-
 
 #### Tecnologias
 
@@ -149,3 +146,10 @@ npm run release
 ![Alt text](image-6.png)
 
 ### Deploy
+
+De um push na branch master do projeto e o storybook deployer vai utilizar as actions para fazer todo processo de build deploy automaticamente, além de utilizar o cache remoto na vercel para otimizar o tempo de deployment, pode checar o resultado na parte de actions do repo.
+![Alt text](image-7.png)
+
+
+## Link do projeto deployado
+https://phenog.github.io/DesignSystemCall/
