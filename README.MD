@@ -121,12 +121,19 @@ Para fazer o deploy automatizado, utilizamos o storybook/deployer junto de actio
 npm run changeset
 ```
 ![Alt text](image.png)
-selecione todos pacotes que tiveram mudanças em "changed packages" ou selecione um a parte para fazer uma release de apenas um dos pacotes. 
+
+Selecione todos pacotes que tiveram mudanças em "changed packages" ou selecione um a parte para fazer uma release de apenas um dos pacotes. 
+
 ![Alt text](image-1.png)
+
 Selecione se os pacotes tiveram mudanças MAJOR, MINOR ou PATCH, apenas aperte enter sem selecionar o pacote que ele vai na sequencia de major a patch, no exemplo utilizaremos a patch removendo um token de color teste incluido anteriormente para exemplo:
+
 ![Alt text](image-2.png)
+
 Aqui em summary, descreva as mudanças que ocorreram nos pacotes e que ficarão no changelog do projeto automaticamente.
+
 ![Alt text](image-3.png)
+
 Após isso você deve confirmar suas alterações, e o primeiro passo foi completo.
 
 ### Utilize o comando:
