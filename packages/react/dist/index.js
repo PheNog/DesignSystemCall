@@ -67,7 +67,15 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  config: () => config,
+  createTheme: () => createTheme,
+  css: () => css,
+  getCssText: () => getCssText,
+  globalCss: () => globalCss,
+  keyframes: () => keyframes,
+  styled: () => styled,
+  theme: () => theme
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -83,10 +91,10 @@ var colors = {
   gray700: "#29292E",
   gray800: "#202024",
   gray900: "#121214",
-  ignite300: "#00B37E",
-  ignite500: "#00875F",
-  ignite700: "#015F43",
-  ignite900: "#00291D"
+  callnog300: "#00B37E",
+  callnog500: "#00875F",
+  callnog700: "#015F43",
+  callnog900: "#00291D"
 };
 var space = {
   1: "0.25rem",
@@ -173,7 +181,7 @@ var {
 
 // src/components/Box.tsx
 var Box = styled("div", {
-  padding: "$4",
+  padding: "$6",
   borderRadius: "$md",
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
@@ -232,23 +240,26 @@ var Button = styled("button", {
   "&:disabled": {
     cursor: "not-allowed"
   },
+  "&:focus": {
+    boxShadow: "0 0 0 2px $colors$gray100"
+  },
   variants: {
     variant: {
       primary: {
         color: "$white",
-        background: "$ignite500",
+        background: "$callnog500",
         "&:not(:disabled):hover": {
-          background: "$ignite300"
+          background: "$callnog300"
         },
         "&:disabled": {
           backgroundColor: "$gray200"
         }
       },
       secondary: {
-        color: "$ignite300",
-        border: "2px solid $ignite500",
+        color: "$callnog300",
+        border: "2px solid $callnog500",
         "&:not(:disabled):hover": {
-          background: "$ignite500",
+          background: "$callnog500",
           color: "$white"
         },
         "&:disabled": {
@@ -314,8 +325,8 @@ var Avatar = __toESM(require("@radix-ui/react-avatar"));
 var AvatarContainer = styled(Avatar.Root, {
   borderRadius: "$full",
   display: "inline-block",
-  width: "$12",
-  height: "$12",
+  width: "$16",
+  height: "$16",
   overflow: "hidden"
 });
 var AvatarImage = styled(Avatar.Image, {
@@ -348,6 +359,9 @@ function Avatar2(props) {
 }
 Avatar2.displayName = "Avatar";
 
+// src/components/TextInput/TextInput.tsx
+var import_react2 = require("react");
+
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
   backgroundColor: "$gray900",
@@ -356,13 +370,26 @@ var TextInputContainer = styled("div", {
   boxSizing: "border-box",
   border: "2px solid $gray900",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
+  variants: {
+    size: {
+      sm: {
+        padding: "$2 $3"
+      },
+      md: {
+        padding: "$3 $4"
+      }
+    }
+  },
   "&:has(input:focus)": {
-    borderColor: "$ignite300"
+    borderColor: "$callnog300"
   },
   "&:has(input:disabled)": {
     opacity: 0.5,
     cursor: "not-allowed"
+  },
+  defaultVariants: {
+    size: "md"
   }
 });
 var Prefix = styled("span", {
@@ -385,20 +412,20 @@ var Input = styled("input", {
   "&:disabled": {
     cursor: "not-allowed"
   },
-  "&:placeholder": {
+  "&::placeholder": {
     color: "$gray400"
   }
 });
 
 // src/components/TextInput/TextInput.tsx
 var import_jsx_runtime2 = require("react/jsx-runtime");
-function TextInput(_a) {
-  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { children: [
+var TextInput = (0, import_react2.forwardRef)((_a, ref) => {
+  var _b = _a, { prefix, size } = _b, props = __objRest(_b, ["prefix", "size"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { size, children: [
     !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({}, props))
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({ ref }, props))
   ] });
-}
+});
 TextInput.displayName = "TextInput";
 
 // src/components/TextArea.tsx
@@ -416,7 +443,7 @@ var TextArea = styled("textarea", {
   minHeight: 80,
   "&:focus": {
     outline: 0,
-    borderColor: "$ignite300"
+    borderColor: "$callnog300"
   },
   "&:disabled": {
     opacity: 0.5,
@@ -448,10 +475,10 @@ var CheckboxContainer = styled(Checkbox.Root, {
   alignItems: "center",
   border: "2px solid $gray900",
   '&[data-state="checked"]': {
-    backgroundColor: "$ignite300"
+    backgroundColor: "$callnog300"
   },
-  "&:focus": {
-    border: "2px solid $ignite300"
+  '&:focus, &[data-state="checked"]': {
+    border: "2px solid $callnog300"
   }
 });
 var slideIn = keyframes({
@@ -542,5 +569,13 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  config,
+  createTheme,
+  css,
+  getCssText,
+  globalCss,
+  keyframes,
+  styled,
+  theme
 });

@@ -14,7 +14,5 @@ export const colors = {
   callnog300: '#00B37E',
   callnog500: '#00875F',
   callnog700: '#015F43',
-  callnog900: '#00291D',
-
-  test: '#fff'
+  callnog900: '#00291D'
 }

@@ -7,8 +7,10 @@
 <p align="center">
  <a href="#sobre-o-projeto">Sobre o projeto</a> |
  <a href="#layout">Layout</a> | 
+ <a href="#tokens">Tokens</a> |  
  <a href="#components">Components</a> |  
- <a href="#como-usar">Como usar</a> 
+ <a href="#como-usar">Como usar</a>  |  
+ <a href="#release-e-deploy">Release/Deploy</a> 
 </p>
 
 <h4 align="center">
@@ -18,7 +20,7 @@
 ## Sobre o projeto💻
 ## Call-Nog UI
 Design System com padrões de projeto, components e suas respectivas documentações utilizando storybook para visualização e testes interativos de funcionamento e acessibilidade via interface, além de tokens como espaçamentos, cores, fonts  e etc.
-## Tokens:
+### Tokens:
 - [x] Colors
 - [x] Font Sizes
 - [x] Font Weights
@@ -40,13 +42,21 @@ Design System com padrões de projeto, components e suas respectivas documentaç
 #### Funcionalidades
 
 - [X] Listagem de componentes e tokens documentados via storybook.
+
 - [X] Possibilidade de interação com os componentes e suas variações via interface
+
 - [X] Testes de acessibilidade dos componentes integrados no storybook
+
+- [X] Releases automatizadas e controle de varios pacotes com changesets aliado as github actions
+
+- [X] Criação do changelog automatica via CLI.
+
+- [X] Deploy automatizado com storybook/deployer aliado as github actions
 
 
 #### Tecnologias
 
-Temos 3 pacotes criados para esse projeto, utilizamos o conceito monorepo com auxilio do turboRepo para maior facilidade no build da aplicação completa, os pacotes são:
+Temos 3 pacotes criados para esse projeto, utilizamos o conceito monorepo com auxilio do turboRepo e changesets para maior facilidade no build da aplicação completa, assim como deploy automatizado e gerenciamento dos pacotes, que são:
 ### @call-nog-ui/react
 ### @call-nog-ui/tokens
 ### @call-nog-ui/docs
@@ -92,7 +102,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 ```bash
 git clone https://github.com/PheNog/DesignSystemCall.git
 ```
-##### Após clonar, acesse as pastas do projeto no terminal/cmd e instale as dependências
+##### Após clonar, acesse a pasta raiz do projeto no terminal/cmd e instale as dependências
 ```bash
 npm install
 # ou npm i
@@ -105,14 +115,37 @@ npm run dev
 ___
 
 
-# Components
+# Release/Deploy de alterações
 
-- [x] Text
-- [x] Heading
-- [x] Box
-- [x] Button
-- [x] TextInput
-- [x] TextArea
-- [x] CheckBox
-- [x] Avatar
-- [x] MultiStep
+Para fazer o deploy automatizado, utilizamos o storybook/deployer junto de actions no github, configuramos que ao fazer um push na branch master o deploy ocorra de forma automatica, temos também um cache system em nuvem na vercell para maior velocidade no build/deploy da aplicação, para uma release/deploy siga os seguintes passos:
+
+### Changeset para gerenciar as alterações nos pacotes:
+```bash
+npm run changeset
+```
+![Alt text](image.png)
+selecione todos pacotes que tiveram mudanças em "changed packages" ou selecione um a parte para fazer uma release de apenas um dos pacotes. 
+![Alt text](image-1.png)
+Selecione se os pacotes tiveram mudanças MAJOR, MINOR ou PATCH, apenas aperte enter sem selecionar o pacote que ele vai na sequencia de major a patch, no exemplo utilizaremos a patch removendo um token de color teste incluido anteriormente para exemplo:
+![Alt text](image-2.png)
+Aqui em summary, descreva as mudanças que ocorreram nos pacotes e que ficarão no changelog do projeto automaticamente.
+![Alt text](image-3.png)
+Após isso você deve confirmar suas alterações, e o primeiro passo foi completo.
+
+### Utilize o comando:
+```bash
+npm run version-packages
+```
+esse comando ira alterar as versões do pacote automaticamente conforme nossa configuração anterior, alem de automaticamente atualizar o changelog do pacote referido com as alterações.
+![Alt text](image-4.png)
+Changelog:
+
+![Alt text](image-5.png)
+
+### Release dos pacotes alterados no NPM:
+```bash
+npm run release
+```
+![Alt text](image-6.png)
+
+### Deploy
